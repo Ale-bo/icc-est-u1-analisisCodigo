@@ -32,6 +32,20 @@ class MetodosOrdenamiento:
                     min = j
             arreglo[i], arreglo[min] = arreglo[min], arreglo[i]
         return arreglo
+    
+    def sort_shell(self, array):
+        arreglo = array.copy()
+        n = len(arreglo)
+        while   n > 1:
+            for i in range(n // 2):
+               temp = arreglo[i]
+               j = i 
+               while j > n and arreglo[j - n] > temp:
+                   arreglo[j] = arreglo[j - n]
+                   j -= n
+                   arreglo[j] = temp
+                   n = n // 2
+
         
 
                 

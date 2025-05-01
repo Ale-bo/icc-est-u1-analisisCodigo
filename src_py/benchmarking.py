@@ -6,21 +6,25 @@ class Benchmarking:
         print('Benchmarking instanciado')
 
         self.mO = MetodosOrdenamiento()
-        arreglo = self.build_arreglo(50000) 
+        arreglo = self.build_arreglo(1000) 
 
         tarea = lambda: self.mO.sortBubble(arreglo)
         tarea2 = lambda: self.mO.sort_burbuja_mejorado(arreglo)
         tarea3 = lambda: self.mO.sort_seleccion(arreglo)
+        tare4 = lambda: self.mO.sort_shell(arreglo)
         
         #tiempoMillies = self.contar_con_current_time_millies(tarea)
         tiempoNano = self.contar_con_nano_time(tarea)
         tiempoNano2 = self.contar_con_nano_time(tarea2)
         tiempoNano3 = self.contar_con_nano_time(tarea3)
+        tiempoNano4 = self.contar_con_nano_time(tare4)
+
        
         #print(f'Tiempo tiempo millies: {tiempoMillies}')
         print(f'Tiempo con tiempo nano burbuja: {tiempoNano}')
         print(f'Tiempo con tiempo nano burbujaMejorado: {tiempoNano2}')
         print(f'Tiempo con tiempo nano seleccion: {tiempoNano3}')
+        print(f'Tiempo con tiempo nano shell: {tiempoNano4}')
 
 
     def build_arreglo(self, tamano):
